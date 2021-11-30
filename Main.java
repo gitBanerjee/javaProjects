@@ -17,7 +17,7 @@ class Movie{
 
 class Pk extends Movie{
     public Pk(){
-       super("PK");
+        super("PK");
     }
 
     @Override
@@ -74,18 +74,39 @@ class IndependenceDay extends Movie{
 public class Main {
 
     public static void main(String[] args) {
-        Main.randomMovie();
+        Movie movie = randomMovie();
+        System.out.println("Movie name is " + movie.getName() + "\n" +
+                "Kahani of the movie is: " + movie.kahani() + "\n");
 
     }
 
-    public static void randomMovie(){
+    public static Movie randomMovie(){
         int randomNumber = (int)(Math.random() * 5) + 1;
-        System.out.println("Random number generated was: " + randomNumber);}}
+        System.out.println("Random number generated was: " + randomNumber);
+        switch(randomNumber){
+            case 1:
+                return new Pk();
+            case 2:
+                return new Avengers();
+            case 3:
+                return new Bagban();
+            case 4:
+                return new ThreeIdiots();
+            case 5:
+                return new IndependenceDay();
+        }
+        return null;
+    }
+}
+
+//Polymorphism
+//ParentClass handler = new ChildClass();
+//Composition
 
 
+//A => B => C => D => E => F
+//A handler = new F();
 
+//Polymorphism => Inheritance + Object Overriding
 
-
-
-
-
+//Object OverRiding + Object OverLoading
